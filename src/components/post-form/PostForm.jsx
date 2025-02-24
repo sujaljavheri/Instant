@@ -326,10 +326,12 @@ export default function PostForm({ post }) {
     }, [title, setValue]);
 
     const submit = async (data) => {
+         console.log("✅ Submit button clicked!");
         console.log("Form Data Before Submission:", data);
         data.content = data.content.replace(/^[a-zA-Z\d\s]<p>|<\/p>$/g, "-"); 
 
         if (!data.content || data.content.trim() === "") {
+             console.log("✅ Empty content!");
             alert("Content is empty! Please add some content before submitting.");
             return;
         }
