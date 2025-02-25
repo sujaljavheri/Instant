@@ -27,7 +27,7 @@ export default function RTE({ name, control, label, defaultvalue = "" }) {
               content_style: "body { font-family:Helvetica,Arial,sans-serif; font-size:14px }",
               branding: false,  // Removes TinyMCE branding
             }}
-            onEditorChange={onChange}  // Correct event handler
+            onEditorChange={(content) => onChange(content)} // Correct event handler
           />
         )}
       />
