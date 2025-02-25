@@ -12,7 +12,7 @@ export default function RTE({ name, control, label, defaultvalue = "" }) {
         control={control}
         render={({ field: { onChange } }) => (
           <Editor
-            apiKey="5bazciplbqrjobirgkobjkwdht0htb33plyvms9j9xxlcb1p" // Ensure this key is correct
+            apiKey="ndtnwezczdj7q7fbcc0ymue993yzbw2fgg3614acvtrt6t5m" // Ensure this key is correct
             initialValue={defaultvalue}
             init={{
               selector: 'textarea',  // Ensure TinyMCE applies correctly
