@@ -322,6 +322,7 @@ export default function PostForm({ post }) {
                 .trim()
                 .replace(/\s+/g, "-"); // Replace spaces with "-"
             setValue("slug", slug, { shouldValidate: true });
+            setValue("title", slug, { shouldValidate: true });
         }
     }, [title, setValue]);
 
