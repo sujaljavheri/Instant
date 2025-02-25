@@ -328,7 +328,7 @@ export default function PostForm({ post }) {
     const submit = async (data) => {
          console.log("✅ Submit button clicked!");
         console.log("Form Data Before Submission:", data);
-        data.content = data.content.replace(/^[a-zA-Z\d\s]<p>|<\/p>$/g, "-"); 
+        data.content = data.content.replace(/<\/?[^>]+(>|$)/g, "").replace(/&nbsp;/g, " "); 
 
         if (!data.content || data.content.trim() === "") {
              console.log("✅ Empty content!");
