@@ -322,12 +322,15 @@ export default function PostForm({ post }) {
                 .trim()
                 .replace(/\s+/g, "-"); // Replace spaces with "-"
             setValue("slug", slug, { shouldValidate: true });
+            setValue("title", slug, { shouldValidate: true });
         }
     }, [title, setValue]);
 
     const submit = async (data) => {
+        console.log("Submitting content:", data.content);
         console.log("Form Data Before Submission:", data);
-        data.content = data.content.replace(/^[a-zA-Z\d\s]<p>|<\/p>$/g, "-"); 
+        data.content = data.content.replace(/<\/?[^>]+(>|$)/g, "").replace(/&nbsp;/g, " ");
+        console.log("after Submitting content:", data.content);
 
         if (!data.content || data.content.trim() === "") {
             alert("Content is empty! Please add some content before submitting.");
