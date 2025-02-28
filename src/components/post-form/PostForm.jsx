@@ -278,6 +278,10 @@
 //     );
 // }
 
+// .toLowerCase()
+//                 .replace(/[^a-z0-9\s]/g, "") // Remove special chars
+//                 .trim()
+//                 .replace(/\s+/g, "-");
 
 import React,{useEffect} from "react";
 import { useForm, Controller } from "react-hook-form";
@@ -316,11 +320,14 @@ export default function PostForm({ post }) {
 
     useEffect(() => {
         if (title) {
+            const isValid = /^[a-zA-Z0-9_]+$/.test(title);
+
+            if (!isValid) {
+                alert("Title should not contain spaces or special symbols! Use only letters, numbers, or underscores.");
+            }
             const slug = title
-                .toLowerCase()
-                .replace(/[^a-z0-9\s]/g, "") // Remove special chars
-                .trim()
-                .replace(/\s+/g, "-"); // Replace spaces with "-"
+
+                 // Replace spaces with "-"
             setValue("slug", slug, { shouldValidate: true });
             setValue("title", slug, { shouldValidate: true });
         }
