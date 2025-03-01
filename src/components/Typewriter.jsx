@@ -14,7 +14,7 @@ const TypewriterEffect = () => {
                     key={index}
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    transition={{ delay: index * 0.1 }} // Adjust speed (0.1s per character)
+                    transition={{ delay: index * 0.1 }} 
                 >
                     {char}
                 </motion.span>

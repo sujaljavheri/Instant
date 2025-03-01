@@ -12,10 +12,10 @@ export default function RTE({ name, control, label, defaultvalue = "" }) {
         control={control}
         render={({ field: { onChange } }) => (
           <Editor
-            apiKey="ndtnwezczdj7q7fbcc0ymue993yzbw2fgg3614acvtrt6t5m" // Ensure this key is correct
+            apiKey="ndtnwezczdj7q7fbcc0ymue993yzbw2fgg3614acvtrt6t5m" 
             initialValue={defaultvalue}
             init={{
-              selector: 'textarea',  // Ensure TinyMCE applies correctly
+              selector: 'textarea',  
               height: 500,
               menubar: false,
               plugins: [
@@ -25,9 +25,9 @@ export default function RTE({ name, control, label, defaultvalue = "" }) {
               ],
               toolbar: "undo redo | blocks | image | bold italic forecolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | help",
               content_style: "body { font-family:Helvetica,Arial,sans-serif; font-size:14px }",
-              branding: false,  // Removes TinyMCE branding
+              branding: false,  
             }}
-            onEditorChange={(content) => onChange(content)} // Correct event handler
+            onEditorChange={(content) => onChange(content)}
           />
         )}
       />
