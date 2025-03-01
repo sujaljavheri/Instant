@@ -44,6 +44,7 @@ export default function PostForm({ post }) {
             const isValid = /^[a-zA-Z0-9_]+$/.test(title);
 
             if (!isValid) {
+                console.log("The title is invalid")
                 alert("Title should not contain spaces or special symbols! Use only letters, numbers, or underscores.");
             }
             const slug = title
